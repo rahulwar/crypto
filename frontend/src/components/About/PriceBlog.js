@@ -90,7 +90,7 @@ const PriceBlog = () =>{
                             </h4>
                             <p>Perfect to get started</p>
                             <div className="pricingtable-price">
-                                <h2 className="pricingtable-bx text-primary"> <span>$</span>{data.price}<small>/ Per Month</small></h2>
+                                <h2 className="pricingtable-bx text-primary"> <span>$</span>{data.price*100}<small>/ Per Month</small></h2>
                                 <div className="days-label bg-primary">Try 7 Days for free</div>
                                 <h6>{data.title2}</h6>
                             </div>
