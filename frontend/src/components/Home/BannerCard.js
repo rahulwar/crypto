@@ -13,31 +13,39 @@ const cardData = [
 function BannerCard(){
     return(
         <>
-            {cardData.map((data, index)=>(
-                <div className="col-lg-4 col-md-6 m-b30 wow fadeInUp" data-wow-delay="0.2s" key={index}>
-                    <div className="icon-bx-wraper style-1 box-hover">
-                        <div className="icon-media">
-                            <img src={data.image} alt="" />
-                            <div className="icon-info">
-                                <h5 className="title">{data.title}</h5>
-                                <span>{data.subtitle}</span>
+            {cardData.map((data, index)=>{
+                    console.log(data.price)
+                return (
+                    (
+                        <div className="col-lg-4 col-md-6 m-b30 wow fadeInUp" data-wow-delay="0.2s" key={index}>
+                            <div className="icon-bx-wraper style-1 box-hover">
+                                <div className="icon-media">
+                                    <img src={data.image} alt="" />
+                                    <div className="icon-info">
+                                        <h5 className="title">{data.title}</h5>
+                                        <span>{data.subtitle}</span>
+                                    </div>
+                                </div>
+                                <div className="icon-content">
+                                    <ul className="price">
+                                        <li>
+                                            <h6 className="mb-0 amount">${data.price.replace(",","")*1000}</h6>
+                                            <span className= {`percentage ${index===2 ? "text-green" : "text-red"}`}>{data.percent}%</span>
+                                        </li>
+                                        <li>
+                                            <span>Latest price</span>
+                                            <span>24h change</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div className="icon-content">
-                            <ul className="price">
-                                <li>
-                                    <h6 className="mb-0 amount">${data.price}</h6>
-                                    <span className= {`percentage ${index===2 ? "text-green" : "text-red"}`}>{data.percent}%</span>
-                                </li>
-                                <li>
-                                    <span>Latest price</span>
-                                    <span>24h change</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            ))}
+                    )
+                )
+            }
+          
+            
+            )}
         </>
     )
 }
